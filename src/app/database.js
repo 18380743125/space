@@ -1,11 +1,12 @@
 const mysql = require("mysql2");
+const { SERVER_HOST } = require("../config/server");
 
 const connectionPool = mysql.createPool({
-  host: "localhost",
+  host: SERVER_HOST,
   port: "3306",
   database: "coderhub",
   user: "root",
-  password: "AI123456",
+  password: "Bright123.",
   connectionLimit: 5,
 });
 

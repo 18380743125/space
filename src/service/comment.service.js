@@ -22,7 +22,7 @@ class CommentService {
 
   // 删除评论
   async remove(uid, cid) {
-    const statement = `DELETE FROM COMMENT WHERE id = ? AND user_id = ?`;
+    const statement = `DELETE FROM comment WHERE id = ? AND user_id = ?`;
     const result = await connection.execute(statement, [cid, uid]);
     return result;
   }
