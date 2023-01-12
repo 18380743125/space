@@ -13,7 +13,7 @@ class LabelService {
     const statement = `SELECT * FROM label LIMIT ? OFFSET ?`;
     const [result] = await connection.execute(statement, [
       size,
-      (page - 1) * size,
+      toString((page - 1) * size),
     ]);
     return result;
   }

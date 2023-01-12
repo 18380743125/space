@@ -6,6 +6,7 @@ const {
   UNAUTHORIZED,
   TOKEN_EXPIRED,
   RESOURCE_NOT_FOUND,
+  LABEL_IS_ALREADY_EXISTS,
   OPERATION_NOT_ALLOWED,
 } = require("../config/error");
 
@@ -40,6 +41,10 @@ function handleError(error, ctx) {
     case RESOURCE_NOT_FOUND:
       code = -1007;
       message = "该资源不存在~";
+      break;
+    case LABEL_IS_ALREADY_EXISTS:
+      code = -1008;
+      message = "标签名字已存在~";
       break;
     case OPERATION_NOT_ALLOWED:
       code = -2001;
