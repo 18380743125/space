@@ -1,13 +1,20 @@
 const mysql = require("mysql2");
-const { SERVER_HOST } = require("../config/server");
+const {
+  MYSQL_HOST,
+  MYSQL_PORT,
+  MYSQL_DATABASE,
+  MYSQL_USER,
+  MYSQL_PASSWORD,
+  MYSQL_POOL_LIMIT
+} = require("../config/server");
 
 const connectionPool = mysql.createPool({
-  host: SERVER_HOST,
-  port: "3306",
-  database: "coderhub",
-  user: "root",
-  password: "Bright123.",
-  connectionLimit: 5,
+  host: MYSQL_HOST,
+  port: MYSQL_PORT,
+  database: MYSQL_DATABASE,
+  user: MYSQL_USER,
+  password: MYSQL_PASSWORD,
+  connectionLimit: MYSQL_POOL_LIMIT,
 });
 
 // 连接结果
